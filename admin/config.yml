@@ -1,0 +1,71 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPOSITORY
+  branch: main
+
+locale: id
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "berita"
+    label: "Berita & Kegiatan"
+    label_singular: "Berita"
+    folder: "content/berita"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Kegiatan Sekolah", "Akademik", "Kesiswaan", "Keagamaan", "Guru", "Pengumuman"] }
+      - { label: "Foto Utama", name: "image", widget: "image", required: false }
+      - { label: "Ringkasan", name: "summary", widget: "text" }
+      - { label: "Isi Berita", name: "body", widget: "markdown" }
+
+  - name: "prestasi"
+    label: "Prestasi"
+    folder: "content/prestasi"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: "Judul Prestasi", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "Nama Siswa/Tim", name: "student", widget: "string", required: false }
+      - { label: "Tingkat", name: "level", widget: "select", options: ["Sekolah", "Kecamatan", "Kabupaten", "Provinsi", "Nasional", "Lainnya"] }
+      - { label: "Foto", name: "image", widget: "image", required: false }
+      - { label: "Keterangan", name: "body", widget: "markdown" }
+
+  - name: "galeri"
+    label: "Galeri Foto"
+    folder: "content/galeri"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "Kategori", name: "category", widget: "select", options: ["Siswa", "Guru", "Fasilitas", "MPLS", "Prestasi", "Pembelajaran", "Kegiatan"] }
+      - { label: "Foto", name: "image", widget: "image" }
+      - { label: "Keterangan", name: "caption", widget: "text", required: false }
+
+  - name: "ekstrakurikuler"
+    label: "Ekstrakurikuler"
+    folder: "content/ekstrakurikuler"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nama Ekstrakurikuler", name: "title", widget: "string" }
+      - { label: "Foto", name: "image", widget: "image", required: false }
+      - { label: "Pembina", name: "coach", widget: "string", required: false }
+      - { label: "Deskripsi", name: "body", widget: "markdown" }
+
+  - name: "pengumuman"
+    label: "Pengumuman & SPMB"
+    folder: "content/pengumuman"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime", format: "YYYY-MM-DD", time_format: false }
+      - { label: "Tampilkan", name: "active", widget: "boolean", default: true }
+      - { label: "Gambar/Brosur", name: "image", widget: "image", required: false }
+      - { label: "Isi", name: "body", widget: "markdown" }
