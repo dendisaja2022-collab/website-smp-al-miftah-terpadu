@@ -1,0 +1,15 @@
+PERBAIKAN CMS OTOMATIS
+======================
+Versi ini membuat konten dari Decap CMS tampil otomatis di website.
+
+Alur:
+Admin /admin/ -> Publish -> GitHub content/*.md + assets/uploads -> Netlify menjalankan build-content.js -> content-data.js -> website menampilkan konten.
+
+PENTING:
+1. Upload semua file versi ini ke repository GitHub yang sama.
+2. File netlify.toml sudah mengatur Build command: node build-content.js dan Publish directory: .
+3. Jangan hapus folder content atau assets/uploads yang sudah berisi konten hasil Admin.
+4. Setelah commit GitHub, tunggu Netlify selesai deploy.
+5. Sesudah itu, konten baru dari Admin akan ikut muncul setelah deploy Netlify selesai.
+
+Bagian CMS yang didukung: Berita & Kegiatan, Prestasi, Galeri Foto, Ekstrakurikuler, Pengumuman & SPMB.
