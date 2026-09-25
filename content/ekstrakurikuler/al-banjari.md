@@ -1,5 +1,5 @@
 ---
 title: AL BANJARI
-image: /assets/uploads/img_4287.jpeg
+image: /assets/uploads/img_4286.jpeg
 ---
 Siswa bersemangat latihan seni musik Al banjari
