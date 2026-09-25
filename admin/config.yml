@@ -1,6 +1,5 @@
 backend:
-  name: github
-  repo: dendisaja2022-collab/website-smp-al-miftah-terpadu
+  name: git-gateway
   branch: main
 
 locale: id
