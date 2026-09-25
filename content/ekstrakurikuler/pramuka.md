@@ -1,5 +1,5 @@
 ---
 title: PRAMUKA
-image: /assets/uploads/img_4287.jpeg
+image: ""
 ---
 Siswa terlihat antusias mengikuti pembinaan Pramuka
